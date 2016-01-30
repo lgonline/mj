@@ -1,0 +1,20 @@
+Adapter Pattern 适配器模式
+adapter的功能就是在内容和需求之间，作为沟通的桥梁
+适配器模式有2种：
+1、类的adapter（继承）
+2、对象的adapter（委托）
+
+一、类的适配器模式实例：
+Banner：既有的内容，类似220V交流电
+PrintBanner：转换装置，适配器
+MyPrint接口：需要的结果，类似12V直流电
+Main：测试类
+
+1、Banner类有两种方法，字符串放在小括号内并输出showWithParen方法，另一个是字符串前后加1再输出的showWithAster方法
+2、Print接口是声明先加小括号在输出的方法pintWeak以及先加强字符串在输出的方法printStrong
+3、建立一个能使用Banner类来满足Print接口的类，即PrintBanner
+PrintBanner继承Banner然后实现MyPrint接口，利用showWithParen和showWithAster方法来实现printWeak和printStrong
+MainTest不知道系统一何种方式执行PringBanner类，无须修改Main，就行修改PrintBanner类的实现
+
+二、委托适配器模式的实例
+委托指把事情交给谁的意思，在本实例中，Main、Banner和前面的程序实力相同
